@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:test-suite start="1474980604888" stop="1474980663470" version="1.4.23.HOTFIX1" xmlns:ns2="urn:model.allure.qatools.yandex.ru">
+    <name>MyFirstWebDriverTest</name>
+    <test-cases>
+        <test-case start="1474980605136" stop="1474980635515" status="passed">
+            <name>secondScenario</name>
+            <steps/>
+            <attachments/>
+            <labels>
+                <label name="host" value="max-GE62-2QC"/>
+                <label name="thread" value="18740@max-GE62-2QC.main(1)"/>
+            </labels>
+        </test-case>
+        <test-case start="1474980635953" stop="1474980663467" status="passed">
+            <name>firstScenario</name>
+            <steps/>
+            <attachments/>
+            <labels>
+                <label name="host" value="max-GE62-2QC"/>
+                <label name="thread" value="18740@max-GE62-2QC.main(1)"/>
+            </labels>
+        </test-case>
+    </test-cases>
+    <labels>
+        <label name="framework" value="JUnit"/>
+        <label name="language" value="JAVA"/>
+    </labels>
+</ns2:test-suite>

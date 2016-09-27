@@ -1,0 +1,47 @@
+{
+  "uid" : "7d6af2861bd086c3",
+  "name" : "secondScenario",
+  "title" : "Second scenario",
+  "time" : {
+    "start" : 1474980605136,
+    "stop" : 1474980635515,
+    "duration" : 30379
+  },
+  "summary" : {
+    "attachments" : 0,
+    "steps" : 0
+  },
+  "failure" : null,
+  "description" : null,
+  "severity" : "NORMAL",
+  "status" : "PASSED",
+  "testId" : null,
+  "suite" : {
+    "uid" : "73e1aa926db4adfb",
+    "name" : "MyFirstWebDriverTest",
+    "title" : "My first web driver test"
+  },
+  "steps" : [ ],
+  "attachments" : [ ],
+  "issues" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "JUnit"
+  }, {
+    "name" : "language",
+    "value" : "JAVA"
+  }, {
+    "name" : "suite-title",
+    "value" : null
+  }, {
+    "name" : "host",
+    "value" : "max-GE62-2QC"
+  }, {
+    "name" : "suite-name",
+    "value" : "MyFirstWebDriverTest"
+  }, {
+    "name" : "thread",
+    "value" : "18740@max-GE62-2QC.main(1)"
+  } ],
+  "parameters" : [ ]
+}

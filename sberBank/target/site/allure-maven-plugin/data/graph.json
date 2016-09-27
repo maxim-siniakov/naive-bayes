@@ -1,0 +1,25 @@
+{
+  "testCases" : [ {
+    "uid" : "7d6af2861bd086c3",
+    "name" : "secondScenario",
+    "title" : "Second scenario",
+    "time" : {
+      "start" : 1474980605136,
+      "stop" : 1474980635515,
+      "duration" : 30379
+    },
+    "severity" : "NORMAL",
+    "status" : "PASSED"
+  }, {
+    "uid" : "8b5cc89f84061293",
+    "name" : "firstScenario",
+    "title" : "First scenario",
+    "time" : {
+      "start" : 1474980635953,
+      "stop" : 1474980663467,
+      "duration" : 27514
+    },
+    "severity" : "NORMAL",
+    "status" : "PASSED"
+  } ]
+}

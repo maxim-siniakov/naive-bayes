@@ -1,0 +1,48 @@
+{
+  "features" : [ {
+    "title" : "Without feature",
+    "statistic" : {
+      "total" : 2,
+      "passed" : 2,
+      "pending" : 0,
+      "canceled" : 0,
+      "failed" : 0,
+      "broken" : 0
+    },
+    "stories" : [ {
+      "uid" : "7b8415cd94391e64",
+      "title" : "Without story",
+      "statistic" : {
+        "total" : 2,
+        "passed" : 2,
+        "pending" : 0,
+        "canceled" : 0,
+        "failed" : 0,
+        "broken" : 0
+      },
+      "testCases" : [ {
+        "uid" : "7d6af2861bd086c3",
+        "name" : "secondScenario",
+        "title" : "Second scenario",
+        "time" : {
+          "start" : 1474980605136,
+          "stop" : 1474980635515,
+          "duration" : 30379
+        },
+        "severity" : "NORMAL",
+        "status" : "PASSED"
+      }, {
+        "uid" : "8b5cc89f84061293",
+        "name" : "firstScenario",
+        "title" : "First scenario",
+        "time" : {
+          "start" : 1474980635953,
+          "stop" : 1474980663467,
+          "duration" : 27514
+        },
+        "severity" : "NORMAL",
+        "status" : "PASSED"
+      } ]
+    } ]
+  } ]
+}
