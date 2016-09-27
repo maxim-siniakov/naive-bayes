@@ -31,6 +31,8 @@ public class MyFirstWebDriverTest {
     private ChromeDriver driver = new ChromeDriver(options);
     private WebDriverWait wait = new WebDriverWait(driver, 10);
 
+
+    // Переход на страницу яндекс маркета и выбор пункта Компьютеры
     public void goToYandexMarketComputers() {
         driver.manage().window().maximize();
         driver.get("http://www.yandex.ru");
@@ -42,46 +44,47 @@ public class MyFirstWebDriverTest {
                 "noindex > ul > li:nth-child(2)"))).click();
     }
 
+    // выбор раздела Ноутбуки
     public void pickNotebooks() {
         wait.until(visibilityOfElementLocated(By.cssSelector("body > div.main > div.layout-grid.layout.layout_type_maya > " +
                 "div.layout-grid__col.layout-grid__col_width_2 > div > div:nth-child(1) > div > a:nth-child(2)"))).click();
     }
-
+    // выбор раздела Планшеты
     public void pickTablet() {
         wait.until(visibilityOfElementLocated(By.cssSelector("body > div.main > div.layout-grid.layout.layout_type_maya >" +
                 "div.layout-grid__col.layout-grid__col_width_2 > div > div:nth-child(1) > div > a:nth-child(1)"))).click();
     }
-
+    // выбор раздела Расширенный поиск
     public void ultimateSearch() {
         wait.until(visibilityOfElementLocated(By.xpath("/html/body/div[3]/table/tbody/tr/td[2]/table/tbody/tr/td[1]/div/form/table/tbody/tr[6]/td/a"))).click();
     }
-
+    // указываем цену левой границы
     public void setLeftBorderPrice(String priceLeft) {
         webElement = wait.until(visibilityOfElementLocated(By.cssSelector("#glf-pricefrom-var")));
         webElement.sendKeys(priceLeft);
     }
-
+    // указываем цену правой границы
     public void setRightBorderPrice(String priceRight) {
         webElement = wait.until(visibilityOfElementLocated(By.cssSelector("#glf-priceto-var")));
         webElement.sendKeys(priceRight);
 
     }
 
-
+    // Нажимаем кнопку применить
     public void acceptConditions() {
         wait.until(visibilityOfElementLocated(By.className("button_action_n-filter-apply"))).click();
     }
 
-
+    //Нажимаем кнопку Еще
     public void moreCompaniesButton() throws InterruptedException, AWTException {
         wait.until(visibilityOfElementLocated(By.className("button-vendors__others"))).click();
     }
-
+    // Cравниваем количество элементов на странице с переданным числом
     public void checkElementsOnPage(int counts) {
         webElementList = driver.findElements(By.className("snippet-card__header-text"));
         assert webElementList.size() == counts;
     }
-
+    // Вводим первый элемент в поисковую строку
     public void searchFirstElementInSearchLine(String firstElement) throws InterruptedException {
         Thread.sleep(2000);
         webElement = driver.findElement(By.cssSelector("#header-search"));
@@ -91,6 +94,7 @@ public class MyFirstWebDriverTest {
         assert webElement.getText().equals(firstElement);
     }
 
+    // Выполнение первого теста
     @Test
     public void firstScenario() throws InterruptedException {
         goToYandexMarketComputers();
@@ -105,7 +109,7 @@ public class MyFirstWebDriverTest {
         searchFirstElementInSearchLine(webElementList.get(0).getText());
         driver.quit();
     }
-
+    // Выполнение второго теста
     @Test
     public void secondScenario() throws InterruptedException, AWTException {
         goToYandexMarketComputers();
