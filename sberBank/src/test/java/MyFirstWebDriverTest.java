@@ -11,12 +11,12 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.awt.*;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
-
 import static org.junit.Assert.assertTrue;
 import static org.openqa.selenium.By.id;
 import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOfElementLocated;
@@ -31,11 +31,35 @@ public class MyFirstWebDriverTest {
     private ChromeDriver driver = new ChromeDriver(options);
     private WebDriverWait wait = new WebDriverWait(driver, 10);
 
+    // Проверка кода страницы
+    public  void openIfLinkExists(ChromeDriver driver, String URLName) throws LinkDoesNotExistException {
+        try {
+            HttpURLConnection.setFollowRedirects(false);
+            HttpURLConnection conn = (HttpURLConnection) new URL(URLName).openConnection();
+            conn.setRequestMethod("HEAD");
+            if(conn.getResponseCode() == HttpURLConnection.HTTP_OK ||  conn.getResponseCode() == HttpURLConnection.HTTP_MOVED_TEMP) {
+                driver.get(URLName);
+            } else {
+                throw new LinkDoesNotExistException();
+            }
+        } catch (Exception e) {
+            throw new LinkDoesNotExistException();
+        }
+    }
 
+    public void openLink(ChromeDriver driver, String string) throws LinkDoesNotExistException{
+        try{
+            openIfLinkExists(this.driver, string);
+        }
+        catch( LinkDoesNotExistException e){
+            e.linkMessage();
+        }
+    }
     // Переход на страницу яндекс маркета и выбор пункта Компьютеры
-    public void goToYandexMarketComputers() {
+    public void goToYandexMarketComputers()  throws LinkDoesNotExistException {
         driver.manage().window().maximize();
-        driver.get("http://www.yandex.ru");
+        openLink(driver , "http://www.yandex.ru");
+
         webElement = wait.until(visibilityOfElementLocated(By.cssSelector("body > div.container.rows > " +
                 "div.row.rows__row.rows__row_main > div > div.container.container__search.container__line > div > " +
                 "div.col.col_home-arrow > div > div.home-arrow__tabs > div > a:nth-child(2)")));
@@ -44,7 +68,7 @@ public class MyFirstWebDriverTest {
                 "noindex > ul > li:nth-child(2)"))).click();
     }
 
-    // выбор раздела Ноутбуки
+    // Выбор раздела Ноутбуки
     public void pickNotebooks() {
         wait.until(visibilityOfElementLocated(By.cssSelector("body > div.main > div.layout-grid.layout.layout_type_maya > " +
                 "div.layout-grid__col.layout-grid__col_width_2 > div > div:nth-child(1) > div > a:nth-child(2)"))).click();
@@ -67,14 +91,11 @@ public class MyFirstWebDriverTest {
     public void setRightBorderPrice(String priceRight) {
         webElement = wait.until(visibilityOfElementLocated(By.cssSelector("#glf-priceto-var")));
         webElement.sendKeys(priceRight);
-
     }
-
     // Нажимаем кнопку применить
     public void acceptConditions() {
         wait.until(visibilityOfElementLocated(By.className("button_action_n-filter-apply"))).click();
     }
-
     //Нажимаем кнопку Еще
     public void moreCompaniesButton() throws InterruptedException, AWTException {
         wait.until(visibilityOfElementLocated(By.className("button-vendors__others"))).click();
@@ -93,10 +114,10 @@ public class MyFirstWebDriverTest {
         webElement = wait.until(visibilityOfElementLocated(By.cssSelector("body > div.main > div:nth-child(3) > div.n-product-summary.i-bem.n-product-summary_js_inited > div.n-product-summary__content > div.n-product-summary__headline > div > h1")));
         assert webElement.getText().equals(firstElement);
     }
-
     // Выполнение первого теста
     @Test
-    public void firstScenario() throws InterruptedException {
+    public void firstScenario() throws InterruptedException, LinkDoesNotExistException {
+        openLink(driver , "http://www.yandex.ru");
         goToYandexMarketComputers();
         pickNotebooks();
         ultimateSearch();
@@ -111,7 +132,7 @@ public class MyFirstWebDriverTest {
     }
     // Выполнение второго теста
     @Test
-    public void secondScenario() throws InterruptedException, AWTException {
+    public void secondScenario() throws InterruptedException, AWTException, LinkDoesNotExistException {
         goToYandexMarketComputers();
         pickTablet();
         ultimateSearch();

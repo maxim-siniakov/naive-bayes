@@ -2,26 +2,26 @@
   "hosts" : [ {
     "title" : "max-GE62-2QC",
     "threads" : [ {
-      "title" : "18740@max-GE62-2QC.main(1)",
+      "title" : "10620@max-GE62-2QC.main(1)",
       "testCases" : [ {
-        "uid" : "7d6af2861bd086c3",
+        "uid" : "49504eabded1b45e",
         "name" : "secondScenario",
         "title" : "Second scenario",
         "time" : {
-          "start" : 1474980605136,
-          "stop" : 1474980635515,
-          "duration" : 30379
+          "start" : 1475053286544,
+          "stop" : 1475053319329,
+          "duration" : 32785
         },
         "severity" : "NORMAL",
         "status" : "PASSED"
       }, {
-        "uid" : "8b5cc89f84061293",
+        "uid" : "d40b42e5a3d96681",
         "name" : "firstScenario",
         "title" : "First scenario",
         "time" : {
-          "start" : 1474980635953,
-          "stop" : 1474980663467,
-          "duration" : 27514
+          "start" : 1475053319746,
+          "stop" : 1475053377986,
+          "duration" : 58240
         },
         "severity" : "NORMAL",
         "status" : "PASSED"

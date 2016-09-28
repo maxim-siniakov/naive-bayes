@@ -1,11 +1,11 @@
 {
-  "uid" : "8b5cc89f84061293",
+  "uid" : "d40b42e5a3d96681",
   "name" : "firstScenario",
   "title" : "First scenario",
   "time" : {
-    "start" : 1474980635953,
-    "stop" : 1474980663467,
-    "duration" : 27514
+    "start" : 1475053319746,
+    "stop" : 1475053377986,
+    "duration" : 58240
   },
   "summary" : {
     "attachments" : 0,
@@ -17,7 +17,7 @@
   "status" : "PASSED",
   "testId" : null,
   "suite" : {
-    "uid" : "73e1aa926db4adfb",
+    "uid" : "7292c7e5f6947826",
     "name" : "MyFirstWebDriverTest",
     "title" : "My first web driver test"
   },
@@ -25,6 +25,9 @@
   "attachments" : [ ],
   "issues" : [ ],
   "labels" : [ {
+    "name" : "thread",
+    "value" : "10620@max-GE62-2QC.main(1)"
+  }, {
     "name" : "framework",
     "value" : "JUnit"
   }, {
@@ -39,9 +42,6 @@
   }, {
     "name" : "suite-name",
     "value" : "MyFirstWebDriverTest"
-  }, {
-    "name" : "thread",
-    "value" : "18740@max-GE62-2QC.main(1)"
   } ],
   "parameters" : [ ]
 }
